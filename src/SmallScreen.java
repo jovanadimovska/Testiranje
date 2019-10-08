@@ -21,7 +21,11 @@ public class SmallScreen {
   JavascriptExecutor js;
   @Before
   public void setUp() {
+<<<<<<< HEAD
 	System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver.exe");  
+=======
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\joana\\Downloads\\chromedriver_win32\\chromedriver.exe");  
+>>>>>>> a42267570215041ca8b823d46c99042ccee47936
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
   }
@@ -109,4 +113,8 @@ public class SmallScreen {
     assertThat(driver.findElement(By.cssSelector(".error-info")).getText(), is("Please fill out all fields."));
     driver.close();
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a42267570215041ca8b823d46c99042ccee47936

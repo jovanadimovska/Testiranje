@@ -36,6 +36,7 @@ public class BigScreenTests {
   public void tearDown() {
     driver.quit();
   }
+<<<<<<< HEAD
   @Test
   public void openVozenRedPage() {
 	    driver.get("http://satbus.mk/");
@@ -164,4 +165,70 @@ public class BigScreenTests {
 	    assertThat(driver.findElement(By.id("B2")).getText(), is("Тирана"));
 	  }
 	
+=======
+  
+  @Test
+  public void openVozenRed() {
+    driver.get("http://satbus.mk/");
+    driver.manage().window().setSize(new Dimension(1550, 838));
+    driver.findElement(By.linkText("ВОЗЕН РЕД")).click();
+    driver.findElement(By.cssSelector(".tabs-content")).click();
+    driver.findElement(By.cssSelector(".tabs-content")).click();
+    driver.findElement(By.cssSelector(".section_row:nth-child(3)")).click();
+    {
+      List<WebElement> elements = driver.findElements(By.xpath("//table[@id=\'supsystic-table-1\']/tbody/tr[2]/td"));
+      assert(elements.size() > 0);
+    }
+  }
+  
+  @Test
+  public void searchLatinica() {
+    driver.get("http://satbus.mk/");
+    driver.manage().window().setSize(new Dimension(1550, 838));
+    {
+      WebElement element = driver.findElement(By.cssSelector(".icons-social-facebook"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.tagName("body"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element, 0, 0).perform();
+    }
+    driver.findElement(By.linkText("ВОЗЕН РЕД")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b input")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b input")).sendKeys("skopje");
+    driver.findElement(By.id("supsystic-table-1_wrapper")).click();
+    driver.findElement(By.cssSelector(".dataTables_empty")).click();
+    driver.findElement(By.cssSelector(".dataTables_empty")).click();
+    assertThat(driver.findElement(By.cssSelector(".dataTables_empty")).getText(), is("Градот не постои. Пробајте повторно со кирилица."));
+  }
+  
+  @Test
+  public void searchTirana() {
+    driver.get("http://satbus.mk/");
+    driver.manage().window().setSize(new Dimension(1550, 838));
+    driver.findElement(By.linkText("ВОЗЕН РЕД")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).sendKeys("Тирана");
+    assertThat(driver.findElement(By.id("B2")).getText(), is("Тирана"));
+  }
+
+  @Test
+  public void searchSkopje() {
+    driver.get("http://satbus.mk/");
+    driver.manage().window().setSize(new Dimension(1550, 838));
+    driver.findElement(By.linkText("ВОЗЕН РЕД")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b input")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b input")).sendKeys("Скопје");
+    {
+      WebElement element = driver.findElement(By.id("B3"));
+      Actions builder = new Actions(driver);
+      builder.doubleClick(element).perform();
+    }
+    assertThat(driver.findElement(By.id("B3")).getText(), is("Скопје"));
+  }
+  	
+>>>>>>> a42267570215041ca8b823d46c99042ccee47936
 }

@@ -14,7 +14,11 @@ import org.openqa.selenium.interactions.Actions;
 
 public class SmallScreenTests {
 	 private WebDriver driver;
+<<<<<<< HEAD
 	 private String FIREFOX_PATH = "E:\\Jovana\\Fakultet\\treta god\\vtor semestar\\skit\\geckodriver-v0.25.0-win64\\geckodriver.exe";
+=======
+	 private String FIREFOX_PATH = "Drivers//geckodriver.exe";
+>>>>>>> a42267570215041ca8b823d46c99042ccee47936
 	  JavascriptExecutor js;
 	  @Before
 	  public void setUp() {
@@ -27,6 +31,7 @@ public class SmallScreenTests {
 	    driver.quit();
 	  }
 	  
+<<<<<<< HEAD
 	  @Test
 	  public void vozenRedPrebaruvanje() {
 	    driver.get("http://satbus.mk/");
@@ -57,4 +62,6 @@ public class SmallScreenTests {
 	    }
 	    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b input")).sendKeys("скопје");
 	  }
+=======
+>>>>>>> a42267570215041ca8b823d46c99042ccee47936
 }
