@@ -14,7 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class SmallScreenTests {
 	 private WebDriver driver;
-	 private String FIREFOX_PATH = "E:\\Jovana\\Fakultet\\treta god\\vtor semestar\\skit\\geckodriver-v0.25.0-win64\\geckodriver.exe";
+	 private String FIREFOX_PATH = "Drivers//geckodriver.exe";
 	  JavascriptExecutor js;
 	  @Before
 	  public void setUp() {
