@@ -74,20 +74,17 @@ public class BigScreenTests {
     assertThat(driver.findElement(By.cssSelector(".dataTables_empty")).getText(), is("Градот не постои. Пробајте повторно со кирилица."));
   }
   
-  //@Test
-  /*public void searchSkopje() {
+  @Test
+  public void searchTirana() {
     driver.get("http://satbus.mk/");
-    driver.findElement(By.linkText("ВОЗЕН РЕД")).click();
     driver.manage().window().setSize(new Dimension(1550, 838));
-    driver.findElement(By.linkText("Локални линии")).click();
-    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6bd6cd-6a32 input")).click();
-    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6bd6cd-6a32 input")).sendKeys("СКопје");
-    driver.findElement(By.cssSelector(".tabs-content")).click();
-    {
-      List<WebElement> elements = driver.findElements(By.id("C19"));
-      assert(elements.size() > 0);
-    }
-  }*/
+    driver.findElement(By.linkText("ВОЗЕН РЕД")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).click();
+    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).sendKeys("Тирана");
+    assertThat(driver.findElement(By.id("B2")).getText(), is("Тирана"));
+  }
+
   @Test
   public void searchSkopje() {
     driver.get("http://satbus.mk/");
@@ -101,20 +98,6 @@ public class BigScreenTests {
       builder.doubleClick(element).perform();
     }
     assertThat(driver.findElement(By.id("B3")).getText(), is("Скопје"));
-  }
-  
-  @Test
-  public void searchTirana() {
-    driver.get("http://satbus.mk/");
-    driver.manage().window().setSize(new Dimension(1550, 838));
-    driver.findElement(By.linkText("ВОЗЕН РЕД")).click();
-    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).click();
-    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).click();
-    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).sendKeys("Тирана");
-    {
-      String value = driver.findElement(By.id("B2")).getText();
-      assertThat(value, is("Тирана"));
-    }
   }
   	
 }
