@@ -21,7 +21,7 @@ public class BigScreenTests {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\joana\\Downloads\\chromedriver_win32\\chromedriver.exe");  
+	System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver.exe");  
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
   }
