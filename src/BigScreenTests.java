@@ -2,7 +2,7 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -148,7 +148,6 @@ public class BigScreenTests {
         builder.moveToElement(element).perform();
       }
     driver.findElement(By.xpath("//*[@id=\"menu-item-3399\"]/a")).click();
-    driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).click();
     driver.findElement(By.cssSelector("#t-1441921988-1-38cda2-ca6b238f-8e9d input")).sendKeys("Тирана");
     assertThat(driver.findElement(By.id("B2")).getText(), is("Тирана"));
   }
